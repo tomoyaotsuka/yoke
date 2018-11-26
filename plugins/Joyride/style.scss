@@ -1,0 +1,69 @@
+/*------------------------------------------------------------*/
+/* Variables
+/*------------------------------------------------------------*/
+
+$duration: .6;
+$color: #e8e8e8;
+
+$easeInCubic:  cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+
+
+/*------------------------------------------------------------*/
+/* Common
+/*------------------------------------------------------------*/
+
+.joyride {
+
+  > div {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: $color;
+      transition: width #{$duration}s $easeOutQuart,
+                  transform #{$duration}s #{$duration*1.2}s $easeOutQuart;
+    }
+    > * {
+      opacity: 0;
+    }
+  }
+}
+
+.joyride[data-effect="blur"] {
+  // opacity: 0;
+  filter: blur(16px);
+  transition: all 2s;
+
+  &.active {
+    filter: blur(0);
+  }
+}
+
+
+/*------------------------------------------------------------*/
+/* is Active
+/*------------------------------------------------------------*/
+
+.joyride.active {
+
+  > div {
+    &::before {
+      width: 100%;
+      transform: translateX(105%);
+    }
+    > * {
+      opacity: 1;
+      transition: opacity 0s #{$duration}s;
+    }
+  }
+}

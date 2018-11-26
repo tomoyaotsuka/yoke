@@ -1,0 +1,45 @@
+{
+  "name": "YOKE",
+  "version": "1.0.0",
+  "description": "Japanese label YOKE, started by designer Norio Terada in 2018.",
+  "author": "Tomoya Otsuka",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "server": "browser-sync start --config 'bs.config.js'"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/google-tag-manager": "^2.1.0",
+    "animejs": "^2.2.0",
+    "autoprefixer": "^9.3.1",
+    "babel-runtime": "^6.26.0",
+    "contentful": "^7.0.5",
+    "node-sass": "^4.9.4",
+    "nuxt": "^2.0.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "swiper": "^4.4.2",
+    "vue-markdown": "^2.2.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "browser-sync": "^2.26.3",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.0.0",
+    "nodemon": "^1.11.0",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "prettier": "1.14.3"
+  }
+}

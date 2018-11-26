@@ -1,0 +1,100 @@
+/*--------------------------------------------------------------------------------*/
+/* Layout */
+/*--------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/* Layout : YOKE
+/*------------------------------------------------------------*/
+
+.page {
+  margin: $row20 $col1 $row14 $col3;
+
+  > .headline,
+  > .subheads {
+    font-family: 'Proxima Nova Light', sans-serif;
+    text-transform: uppercase;
+  }
+
+  > .headline {
+    // @include text-crop(1.6);
+    margin: 0 0 $row4;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+  }
+
+  > .subheads {
+    margin: 0 0 $row5;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .page {
+    margin-left: $col1+$col4;
+    margin-bottom: $row16;
+
+    > .thumbnail {
+      width: $col6-12;
+    }
+  }
+}
+
+
+
+/*------------------------------------------------------------*/
+/* Layout : Nuxt.js
+/*------------------------------------------------------------*/
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .4s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+
+
+/*------------------------------------------------------------*/
+/* Layout : Common
+/*------------------------------------------------------------*/
+
+.mobile-upper-only {
+  display: none;
+}
+
+.inner {
+  margin: 0 $col1;
+}
+
+@media screen and (min-width: 769px) {
+
+  .mobile-only {
+    display: none;
+  }
+
+  .mobile-upper-only {
+    display: block;
+  }
+}
+
+
+
+/*------------------------------------------------------------*/
+/* Layout : Grid
+/*------------------------------------------------------------*/
+
+[class*="grid-"] {
+  display: grid;
+}
+
+[class*="6-6"] {
+  grid-column-gap: $mar1-12;
+  grid-template-columns: 1fr 1fr;
+}
+
+[class$="mobile-upper-only"] {
+  display: block;
+}
